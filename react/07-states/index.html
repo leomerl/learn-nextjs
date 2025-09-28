@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <!-- Importing react -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Importing Babel, a JSX compiler (JSX to Javascript) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById('app');
+
+      function HomePage() {
+        
+        const [likes, setLikes] = React.useState(0);
+
+	function handleClick() {
+	  setLikes(likes + 1)
+	}  
+
+	return (
+	  <div>
+
+	      <button onClick={handleClick}>Like {likes}</button>
+
+	  </div>
+	);
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
